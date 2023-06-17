@@ -51,6 +51,8 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
 
 # Set up config file
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY rtmp /etc/nginx/sites-available/rtmp
 
 EXPOSE 1935
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
